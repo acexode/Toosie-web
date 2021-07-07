@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Toosie-Angular'`, () => {
+  it(`should have as title 'Toosie Pharmacy'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Toosie-Angular');
+    expect(app.title).toEqual('Toosie Pharmacy');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Toosie-Angular app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('Toosie Pharmacy app is running!');
   });
 });

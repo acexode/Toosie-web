@@ -1,0 +1,54 @@
+<section class="categories">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="section-title">
+                    <h2>{{title}}</h2>
+                </div>
+            </div>
+            <div *ngIf="!showIcons" class="categories__slider owl-carousel owl-loaded owl-drag">
+               
+                <owl-carousel-o [options]="customOptions">
+
+                    <ng-container *ngFor="let slide of slideStore">
+                      <ng-template  carouselSlide [id]="slide.path">
+                       <div class="categories__item set-bg" style="background-color: #6DB3F2;" [style.background]="'url(' + slide.img + ')'">
+
+                           <h5><a href="#">Fresh Fruit</a></h5>
+                       </div>
+                        <!-- <img [src]="slide.img" [alt]="slide.title" [title]="slide.title"> -->
+                      </ng-template>
+                    </ng-container>
+                
+                  </owl-carousel-o>
+            </div>
+            <div *ngIf="showIcons" class="categories__slider owl-carousel owl-loaded owl-drag">
+               
+                <owl-carousel-o [options]="customOptions">
+
+                    <ng-container *ngFor="let slide of slideStore">
+                      <ng-template  carouselSlide [id]="slide.path">
+                        <div class="featured__item mr-3" >
+                            <div style="background-color: aliceblue;" class="featured__item__pic set-bg"
+                            >
+                            <img [src]="slide.img" alt="">
+                                <ul class="featured__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                                <h6><a href="#">Crab Pool Security</a></h6>
+                                <h5>₦ 30.00</h5>
+                            </div>
+                        </div>
+                        <!-- <img [src]="slide.img" [alt]="slide.title" [title]="slide.title"> -->
+                      </ng-template>
+                    </ng-container>
+                
+                  </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</section>

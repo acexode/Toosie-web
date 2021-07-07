@@ -1,0 +1,45 @@
+.t-card{
+    margin: 5rem auto;
+    padding-left: 4rem;
+    padding-top: 4rem;
+    background-color: #fff;
+    border: 1px solid #ededed;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+    overflow: hidden;
+    width: 480px;
+}
+.account-wrapper {
+    padding: 30px;
+}
+.title-403 {
+    color: #0281B2;
+    font-family: Montserrat;
+    margin-top: 1rem;
+    font-size: 37px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    line-height: 40px;
+}
+.access-denied {
+    color: #434455;
+    font-family: "Montserrat Medium";
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 32px;
+}
+.no-permi {
+    font-family: Montserrat;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 16px;
+}
+.go-back {
+    z-index: 1;
+    color: #fff;
+    background-color: #0281B2;
+    border: 1px solid #0281B2;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+}

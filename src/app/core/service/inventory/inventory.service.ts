@@ -31,13 +31,13 @@ export class InventoryService {
       this.latestStore.next(results[1].inventory);
     });
   }
-  inventoryByCategory(id){
+  inventoryByCategory(id: string){
     return this.reqS.get(inventoryEndpoints.inventoryByCategory + id + '/1');
   }
   myOrders(){
     return this.reqS.get(inventoryEndpoints.myOrders + '1');
   }
-  searchInventory(term){
+  searchInventory(term: string | any[]){
     console.log(term.length);
     this.loading.next(true);
     return this.reqS.post(inventoryEndpoints.searchInventory, {searchText: term });
@@ -46,6 +46,15 @@ export class InventoryService {
     console.log(terms);
     return terms.pipe(debounceTime(1000),distinctUntilChanged(),
     switchMap(term => this.searchInventory(term)));
+  }
+  savePODCashOrder(obj: { records: any; paymentType: string; address: any; }){
+    return this.reqS.post(inventoryEndpoints.savePODOrder, obj);
+  }
+  saveCardOrder(obj: { address: any; paymentType: string; records: any; txref: any; }){
+    return this.reqS.post(inventoryEndpoints.saveCardOrder, obj);
+  }
+  saveTokenOrder(obj: any){
+    return this.reqS.post(inventoryEndpoints.saveTokenOrder, obj);
   }
 
 }

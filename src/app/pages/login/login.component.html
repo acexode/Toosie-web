@@ -1,0 +1,52 @@
+
+  <section class="myform-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="form-area login-form">
+                    <div class="form-content d-none  d-md-block  ">
+                        <img style="width: 150px; align-self:center" src="assets/img/toosie-white.png" alt="">
+                        <h2 class="mt-3">Login to Toosie</h2>
+                        <p class="pt-3">Welcome to Toosie your number destination for pharmaceutical product</p>
+                        <div class="myform-button">
+                            <span class="text-light mr-3">Dont have an account</span>
+                            <span class="text-light">
+                                <a class="text-dark" routerLink="/auth/signup">Signup</a>
+                            </span>
+                        </div>
+                        
+                    </div>
+                    <div class="form-input">
+                        <h2>Login Form</h2>
+                        <form (ngSubmit)="login()" [formGroup]="credentials">
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" formControlName="email">
+                                <label>Email</label>
+                            </div>
+                            <div *ngIf="(email?.dirty || email?.touched) && email?.errors" class="errors">
+                                <span *ngIf="email?.errors?.required">Email is required</span>
+                                <span *ngIf="email?.errors?.email">Email is invalid</span>
+                              </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Password"  formControlName="password" >
+                                <label>Password</label>
+                            </div>
+                            <div *ngIf="(password?.dirty || password?.touched) && password?.errors" class="errors">
+                                <span *ngIf="password?.errors?.required">Password is required</span>
+                                <span *ngIf="password?.errors?.minlength">Password needs to be 6 characters</span>
+                              </div>
+                            <div class="myform-button">
+                                <button [disabled]="!credentials.valid" class="myform-btn">
+                                    Login
+                                    <div *ngIf="loading" class="spinner-grow" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                      </div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

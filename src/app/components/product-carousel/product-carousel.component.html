@@ -1,3 +1,4 @@
+
 <section class="categories">
     <div class="container">
         <div class="row">
@@ -7,47 +8,100 @@
                 </div>
             </div>
             <div *ngIf="!showIcons" class="categories__slider owl-carousel owl-loaded owl-drag">
+               <div *ngIf="(slideStore | async)">
+                   <owl-carousel-o [options]="customOptions" >
+   
+                       <ng-container *ngFor="let slide of slideStore | async">
+                         <ng-template  carouselSlide [id]="slide.path">
+                          <div class="categories__item set-bg" >
+                           <img [src]="slide.resourceImages[0]" alt="">
+                              <h5><a href="#">{{slide.title | slice:0:15}}</a></h5>
+                          </div>
+                           <!-- <img [src]="slide.img" [alt]="slide.title" [title]="slide.title"> -->
+                         </ng-template>
+                       </ng-container>
+                   
+                     </owl-carousel-o>
+
+               </div>
+               <div *ngIf="!(slideStore | async)">
+                   <owl-carousel-o [options]="customOptions" >
+   
+                       <ng-container *ngFor="let slide of fakeStore">
+                         <ng-template  carouselSlide [id]="slide.toString()">
+                          <div class="categories__item set-bg" style="margin-right: 10px;" >
+                            <ngx-skeleton-loader count="1"
+                                [theme]="{ 
+                                    'height.px': 100
+                                   
+                                  }"
+                                animation="pulse" appearance="line"></ngx-skeleton-loader>
+                            <h5>
+                                <ngx-skeleton-loader count="2"
+                                animation="pulse" appearance="line"></ngx-skeleton-loader>
+                            </h5>
+                          </div>
+                           <!-- <img [src]="slide.img" [alt]="slide.title" [title]="slide.title"> -->
+                         </ng-template>
+                       </ng-container>
+                   
+                     </owl-carousel-o>
+
+               </div>
                
-                <owl-carousel-o [options]="customOptions">
-
-                    <ng-container *ngFor="let slide of slideStore">
-                      <ng-template  carouselSlide [id]="slide.path">
-                       <div class="categories__item set-bg" style="background-color: #6DB3F2;" [style.background]="'url(' + slide.img + ')'">
-
-                           <h5><a href="#">Fresh Fruit</a></h5>
-                       </div>
-                        <!-- <img [src]="slide.img" [alt]="slide.title" [title]="slide.title"> -->
-                      </ng-template>
-                    </ng-container>
-                
-                  </owl-carousel-o>
             </div>
             <div *ngIf="showIcons" class="categories__slider owl-carousel owl-loaded owl-drag">
-               
-                <owl-carousel-o [options]="customOptions">
+                <div *ngIf="(slideStore | async)">
+                    <owl-carousel-o [options]="customOptions">
+    
+                        <ng-container *ngFor="let slide of slideStore | async">
+                          <ng-template  carouselSlide [id]="slide._id">
+                            <div class="featured__item mr-3" >
+                                <div style="" class="featured__item__pic set-bg"
+                                >
+                                <img [src]="slide.resourceImages[0]" alt="">
+                                    <ul class="featured__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="featured__item__text">
+                                    <h6><a href="#">{{slide.title}}</a></h6>
+                                    <h5>₦ {{slide.actualPrice}}</h5>
+                                </div>
+                            </div>
+                            <!-- <img [src]="slide.img" [alt]="slide.title" [title]="slide.title"> -->
+                          </ng-template>
+                        </ng-container>
+                    
+                      </owl-carousel-o>
 
-                    <ng-container *ngFor="let slide of slideStore">
-                      <ng-template  carouselSlide [id]="slide.path">
-                        <div class="featured__item mr-3" >
-                            <div style="background-color: aliceblue;" class="featured__item__pic set-bg"
-                            >
-                            <img [src]="slide.img" alt="">
-                                <ul class="featured__item__pic__hover">
-                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="featured__item__text">
-                                <h6><a href="#">Crab Pool Security</a></h6>
-                                <h5>₦ 30.00</h5>
-                            </div>
-                        </div>
-                        <!-- <img [src]="slide.img" [alt]="slide.title" [title]="slide.title"> -->
-                      </ng-template>
-                    </ng-container>
-                
-                  </owl-carousel-o>
+                </div>
+                  <div *ngIf="!(slideStore | async)">
+                    <owl-carousel-o [options]="customOptions" >
+    
+                        <ng-container *ngFor="let slide of fakeStore">
+                          <ng-template  carouselSlide [id]="slide.toString()">
+                           <div class="categories__item set-bg" style="margin-right: 10px;" >
+                             <ngx-skeleton-loader count="1"
+                                 [theme]="{ 
+                                     'height.px': 100
+                                    
+                                   }"
+                                 animation="pulse" appearance="line"></ngx-skeleton-loader>
+                             <h5>
+                                 <ngx-skeleton-loader count="2"
+                                 animation="pulse" appearance="line"></ngx-skeleton-loader>
+                             </h5>
+                           </div>
+                            <!-- <img [src]="slide.img" [alt]="slide.title" [title]="slide.title"> -->
+                          </ng-template>
+                        </ng-container>
+                    
+                      </owl-carousel-o>
+ 
+                </div>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <app-hero></app-hero>
-<app-product-carousel [showIcons]="false" title="Featured Products" [slideStore]="slideStore"></app-product-carousel>
+<app-product-carousel [showIcons]="false" title="Featured Products" [slideStore]="featuredStore$"></app-product-carousel>
 <section class="categories mt-3 mb-5">
   <div class="container">
     <div class="row delivery p-3">
@@ -10,7 +10,7 @@
     </div>
   </div>
 </section>
-<app-product-carousel [showIcons]="true" title="Popular Products" [slideStore]="slideStore"></app-product-carousel>
+<app-product-carousel [showIcons]="true" title="Popular Products" [slideStore]="latestStore$"></app-product-carousel>
 
 <section class="from-blog spad">
   <div class="container">
@@ -22,51 +22,22 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-4 col-md-4 col-sm-6">
+      <div *ngFor="let blog of blogStore$ | async"  class="col-lg-4 col-md-4 col-sm-6">
         <div class="blog__item">
           <div class="blog__item__pic">
-            <img src="img/blog/xblog-1.jpg.pagespeed.ic.g1IrH1kOnI.webp" alt="">
+            <img [src]="blog.blogImage" alt="">
           </div>
           <div class="blog__item__text">
-            <ul>
-              <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+            <!-- <ul>
+              <li><i class="fa fa-calendar-o"></i> {{blog.created_At | date}}</li>
               <li><i class="fa fa-comment-o"></i> 5</li>
-            </ul>
-            <h5><a href="#">Cooking tips make cooking simple</a></h5>
-            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+            </ul> -->
+            <h5><a href="#">{{blog.blogTitle}}</a></h5>
+            <p>{{blog.blogContent}}</p>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-6">
-        <div class="blog__item">
-          <div class="blog__item__pic">
-            <img src="img/blog/xblog-2.jpg.pagespeed.ic.G49Ya-NhAb.webp" alt="" >
-          </div>
-          <div class="blog__item__text">
-            <ul>
-              <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-              <li><i class="fa fa-comment-o"></i> 5</li>
-            </ul>
-            <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-6">
-        <div class="blog__item">
-          <div class="blog__item__pic">
-            <img src="img/blog/xblog-3.jpg.pagespeed.ic.SKz3o2Rr2U.webp" alt="">
-          </div>
-          <div class="blog__item__text">
-            <ul>
-              <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-              <li><i class="fa fa-comment-o"></i> 5</li>
-            </ul>
-            <h5><a href="#">Visit the clean farm in the US</a></h5>
-            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>

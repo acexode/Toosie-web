@@ -10,6 +10,7 @@ export class ProductCarouselComponent implements OnInit {
   @Input() slideStore: any;
   @Input() title: any;
   @Input() showIcons: boolean = false;
+  fakeStore = [1,2,3,4,5,6]
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -29,7 +30,7 @@ export class ProductCarouselComponent implements OnInit {
         items: 3
       },
       940: {
-        items: 5
+        items: 4
       }
     },
     nav: true

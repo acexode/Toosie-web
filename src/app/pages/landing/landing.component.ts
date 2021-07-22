@@ -1,5 +1,8 @@
+import { Observable } from 'rxjs';
+import { InventoryService } from './../../core/service/inventory/inventory.service';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { BlogService } from 'src/app/core/service/blog/blog.service';
 
 @Component({
   selector: 'app-landing',
@@ -40,10 +43,15 @@ export class LandingComponent implements OnInit {
     },
    
   ];
-  
-  constructor() { }
+  latestStore$: Observable<[]> | any;
+  featuredStore$: Observable<[]> | any;
+  blogStore$: Observable<[]> | any;
+  constructor(private invS: InventoryService, private blogS: BlogService) { }
 
   ngOnInit(): void {
+   this.latestStore$ =  this.invS.latestStore
+   this.featuredStore$ =  this.invS.popularStore
+   this.blogStore$ = this.blogS.blogStore
   }
 
 }

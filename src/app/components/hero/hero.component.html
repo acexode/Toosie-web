@@ -8,15 +8,8 @@
                         <span>All Categories</span>
                     </div>
                     <ul>
-                        <li><a href="#">Baby &amp; Child</a></li>
-                        <li><a href="#">Women Care</a></li>
-                        <li><a href="#">Men Care</a></li>
-                        <li><a href="#">Vitamins</a></li>
-                        <li><a href="#">Hair Care</a></li>
-                        <li><a href="#">Oral Care</a></li>
-                        <li><a href="#">Organic Products</a></li>
-                        <li><a href="#">Medical Supplies</a></li>
-                        <li><a href="#">Fitness &amp; Nutrition</a></li>
+                    <li *ngFor="let cat of categories"><a (click)="navigate(cat.category)">{{cat?.category}}</a></li>
+                        
                        
                     </ul>
                 </div>
@@ -49,7 +42,7 @@
                         <span>Toosie opens 24 Hours</span>
                         <h2>100% Organic <br> Cosmetics</h2>
                         <p>Free Pickup and Delivery Available</p>
-                        <a href="#" class="primary-btn">SHOP NOW</a>
+                        <a routerLink="/home/shop" class="primary-btn text-light">SHOP NOW</a>
                     </div>
                 </div>
             </div>

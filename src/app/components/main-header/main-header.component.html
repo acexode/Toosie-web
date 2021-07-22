@@ -109,18 +109,9 @@
                                     <a href="#"><i class="fa fa-linkedin"></i></a>
                                     <a href="#"><i class="fa fa-pinterest-p"></i></a>
                                 </div>
-                                <div class="header__top__right__language">
-                                    <img src="data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwAwCdASobAA4APm0skkWkIqGYBABABsSxAE6ADcGtd+FD6qAA/vV+Wp4VqyJwr3tsqzUVysGAxh5jK++StlIxrHdqkxyfiwYlcgHy6RWg//tsvaTR2IctDJnOE/5mY93zrj0P0ea+n9DmVodGk7RubcK/qHhB4yLFEzBhQuGAAA=="
-                                        alt="">
-                                    <div>English</div>
-                                    <span class="arrow_carrot-down"></span>
-                                    <ul>
-                                        <li><a href="#">English</a></li>
-                                        <!-- <li><a href="#">Spanis</a></li> -->
-                                    </ul>
-                                </div>
+                                
                                 <div class="header__top__right__auth">
-                                    <a href="#"><i class="fa fa-user"></i> Login</a>
+                                    <a routerLink="/auth/login"><i class="fa fa-user"></i> Login</a>
                                 </div>
                             </div>
                         </div>
@@ -131,7 +122,7 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="header__logo">
-                            <a href="./index.html"><img
+                            <a routerLink="/"><img
                                     width="150px"
                                     class="text-center ml-5"
                                     src="assets/img/logo-big.png"
@@ -141,27 +132,27 @@
                     <div class="col-lg-6">
                         <nav class="header__menu">
                             <ul>
-                                <li class="active"><a routerLink="/">Home</a></li>
-                                <li><a routerLink="/home/shop">Shop</a></li>
-                                <li><a href="#">Prescription</a>
+                                <li  ><a routerLink="/home/">Home</a></li>
+                                <li routerLinkActive="active"><a routerLink="/home/shop">Shop</a></li>
+                                <li routerLinkActive="active"><a href="#">Prescription</a>
                                     <ul class="header__menu__dropdown">
-                                        <li><a href="./shop-details.html">Upload Prescription</a></li>
-                                        <li><a href="./shop-details.html">Prescription History</a></li>
-                                        <li><a href="./shoping-cart.html">Auto Refill</a></li>                                       
+                                        <li><a routerLink="/home/upload-prescription">Upload Prescription</a></li>
+                                        <li><a href="/home/prescription-history">Prescription History</a></li>
+                                        <li><a href="/home/auto-refill">Auto Refill</a></li>                                       
                                     </ul>
                                 </li>
-                                <li><a href="/home/blog">Blog</a></li>
-                                <li><a href="/home/contact">Contact</a></li>
+                                <li routerLinkActive="active"><a routerLink="/home/blog">Blog</a></li>
+                                <li routerLinkActive="active"><a routerLink="/home/contact">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
                     <div class="col-lg-3">
                         <div class="header__cart">
                             <ul>
-                                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                                <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
+                                <li><a routerLink="/home/cart"><i class="fa fa-shopping-bag"></i> <span>{{cartTotal}}</span></a></li>
                             </ul>
-                            <div class="header__cart__price">item: <span>₦ 150.00</span></div>
+                            <div class="header__cart__price">item: <span>₦ {{totalPrice}}</span></div>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { Observable, from } from 'rxjs';
 const REMINDER_KEY = 'pill-reminder';
-import { Storage } from '@capacitor/storage';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,11 +13,11 @@ export class PrescriptionService {
   constructor(private reqS: RequestService) {
 
   }
-  async getReminderList() {
-    const list = await Storage.get({ key: REMINDER_KEY });
-    return (list && list.value) ? list.value : null;
-  }
-  uploadPrescription(formData): Observable<any> {
+  // async getReminderList() {
+  //   const list = await Storage.get({ key: REMINDER_KEY });
+  //   return (list && list.value) ? list.value : null;
+  // }
+  uploadPrescription(formData: FormData) {
     return this.reqS.post(prescriptionEndpoints.newPrecription, formData);
   }
   allPrescriptions(): Observable<any> {

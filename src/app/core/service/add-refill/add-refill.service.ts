@@ -17,10 +17,10 @@ export class AddRefillService {
   refillListing(){
     return this.reqS.get(refillEndpoints.allRefill + 1);
   }
-  refill(data){
+  refill(data: any){
     return this.reqS.post(refillEndpoints.addRefill, data);
   }
-  remove(data){
+  remove(data: { refillId: any; }){
     return this.reqS.patch(refillEndpoints.removeRefill, data);
   }
 }

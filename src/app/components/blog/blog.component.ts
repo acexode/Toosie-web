@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-  blogs = []
+  blogs: any[] =  []
   loading = false;
   constructor(private blogS: BlogService) { }
 
@@ -16,7 +16,7 @@ export class BlogComponent implements OnInit {
     this.blogS.blogStore.subscribe(e =>{
       console.log(e)
       this.loading = false
-      this.blogs = e.blogs
+      this.blogs = e
     })
   }
 

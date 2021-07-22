@@ -56,5 +56,11 @@ export class InventoryService {
   saveTokenOrder(obj: any){
     return this.reqS.post(inventoryEndpoints.saveTokenOrder, obj);
   }
+  createInventory(inv: any){
+    return this.reqS.post(inventoryEndpoints.createInventory, inv)
+  }
+  createCategory(cat: any){
+    return this.reqS.post(inventoryEndpoints.createCategory, cat)
+  }
 
 }

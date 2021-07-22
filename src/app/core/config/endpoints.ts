@@ -15,6 +15,7 @@ export const authEndpoints = {
 export const blogEndpoints = {
     blogListing: serverBaseUrl + '/blog/all/1',
     singlePost: serverBaseUrl + '/blog/open/',
+    createBlog: serverBaseUrl + '/blog/new/',
 };
 
 export const roleEndpoints = {
@@ -39,6 +40,10 @@ export const wishListEndpoints = {
     allWish: baseEndpoints.auth + '/wishlist/mine/all'
 };
 export const inventoryEndpoints = {
+    createInventory: baseEndpoints.inventory + '/product/new',
+    createCategory: baseEndpoints.inventory + '/category/new',
+    createBrand: baseEndpoints.inventory + '/brand/new',
+    createTags: baseEndpoints.inventory + '/tags/new',
     allCategories: baseEndpoints.inventory + '/category/all',
     allTags: baseEndpoints.inventory + '/tags/all',
     brands: baseEndpoints.inventory + '/brands/all',

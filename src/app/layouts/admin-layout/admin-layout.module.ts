@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {DataTablesModule} from 'angular-datatables';
+
 import { AdminLayoutRoutes} from './admin-layout.routing';
 import { SharedModule } from 'src/app/components/shared/shared.module';
 
@@ -14,7 +14,7 @@ import { SharedModule } from 'src/app/components/shared/shared.module';
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     SharedModule,
-    DataTablesModule
+
   ],
   declarations: [
     AdminLayoutComponent

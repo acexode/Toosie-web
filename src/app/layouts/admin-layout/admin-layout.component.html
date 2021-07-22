@@ -1,5 +1,3 @@
-
-
 <div class="body" data-sidebar="dark">
     <div id="layout-wrapper">
 
@@ -9,7 +7,7 @@
                     <!-- LOGO -->
                     <div class="navbar-brand-box">                          
     
-                        <a href="index.html" class="logo logo-light">                                
+                        <a routerLink="index.html" class="logo logo-light">                                
                             <span class=" p-0">
                                 <img class="main-logo" src="assets/img/toosie-white.png" alt="" height="40">
                             </span>
@@ -78,9 +76,9 @@
                         <li class="menu-title">Administration</li>
     
                         <li>
-                            <a href="index.html" class="waves-effect">
+                            <a routerLink="/admin/dashboard" class="waves-effect">
                                 <i class="las la-layer-group"></i>
-                                <span>Reports</span>
+                                <span>Dashboard</span>
                             </a>
                         </li>
                         <li>
@@ -89,8 +87,8 @@
                                 <span>Products</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="show-users.html">All Products</a></li>
-                                <li><a href="add-user.html">Create Product</a></li>                                                               
+                                <li><a routerLink="/admin/products">All Products</a></li>
+                                <li><a routerLink="/admin/products/new">Create Product</a></li>                                                               
                             </ul>
                         </li>
                         <li>
@@ -99,8 +97,8 @@
                                 <span>Category</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="campaign-status.html"> All Cateogries</a></li>
-                                <li><a href="campaign-main.html">Create Category</a></li>
+                                <li><a routerLink="/admin/category"> All Cateogries</a></li>
+                                <li><a routerLink="/admin/category/new">Create Category</a></li>
                             </ul>
                         </li>
                         <li>
@@ -109,8 +107,8 @@
                                 <span>Banners</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="show-list.html">All Banner</a></li>
-                                <li><a href="show-list.html">Create Banner</a></li>                
+                                <li><a routerLink="/admin/brand">All Banner</a></li>
+                                <li><a routerLink="/admin/brand/new">Create Banner</a></li>                
                             </ul>
                         </li>
                         <li>
@@ -119,8 +117,8 @@
                                 <span>Blogs</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="show-script.html">All Blogs</a></li>
-                                <li><a href="new-script.html"> Create Blog</a></li>                                                                                                        
+                                <li><a routerLink="show-script.html">All Blogs</a></li>
+                                <li><a routerLink="new-script.html"> Create Blog</a></li>                                                                                                        
                             </ul>
                         </li>
                         <li>
@@ -129,8 +127,8 @@
                                 <span>Orders</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="show-filter.html">All Orders</a></li>
-                                <li><a href="new-filter.html"> New Order</a></li>                                                                                                        
+                                <li><a routerLink="show-filter.html">All Orders</a></li>
+                                <li><a routerLink="new-filter.html"> New Order</a></li>                                                                                                        
                             </ul>
                         </li>
     
@@ -141,9 +139,9 @@
                                 <span>Users Groups</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="show-user-groups.html">All Users </a></li>
-                                <li><a href="new-user-group.html">Admin Users</a></li>
-                                <li><a href="new-user-group.html">Normal Users</a></li>
+                                <li><a routerLink="show-user-groups.html">All Users </a></li>
+                                <li><a routerLink="new-user-group.html">Admin Users</a></li>
+                                <li><a routerLink="new-user-group.html">Normal Users</a></li>
                             </ul>
                         </li>
                           
@@ -153,75 +151,75 @@
                                 <span>Settings</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="call-time.html" class="waves-effect">
+                                <li><a routerLink="call-time.html" class="waves-effect">
                                     <i class="las la-clock"></i>
                                     <span>Call Times</span></a>                                       
                                 </li>      
-                                <li><a href="shifts.html" class="waves-effect">
+                                <li><a routerLink="shifts.html" class="waves-effect">
                                     <i class="las la-user-clock"></i>
                                     <span>Shifts</span></a>                                       
                                 </li>         
-                                <li><a href="phones.html" class="waves-effect">
+                                <li><a routerLink="phones.html" class="waves-effect">
                                     <i class="las la-phone-square-alt"></i>
                                     <span>Phones</span></a>                                       
                                 </li>
-                                <li><a href="templates.html" class="waves-effect">
+                                <li><a routerLink="templates.html" class="waves-effect">
                                     <i class="las la-poll-h"></i>
                                     <span>Templates</span></a>                                       
                                 </li>                                   
-                                <li><a href="carrier.html" class="waves-effect">
+                                <li><a routerLink="carrier.html" class="waves-effect">
                                     <i class="las la-network-wired"></i>
                                     <span>Carriers</span></a>                                       
                                 </li>                                   
-                                <li><a href="servers.html" class="waves-effect">
+                                <li><a routerLink="servers.html" class="waves-effect">
                                     <i class="las la-server"></i>
                                     <span>Servers</span></a>                                       
                                 </li>                                   
-                                <li><a href="conferences.html" class="waves-effect">
+                                <li><a routerLink="conferences.html" class="waves-effect">
                                     <i class="las la-server"></i>
                                     <span>Conferences</span></a>                                       
                                 </li>                                   
-                                <li><a href="system-setting.html" class="waves-effect">
+                                <li><a routerLink="system-setting.html" class="waves-effect">
                                     <i class="las la-cogs"></i> 
                                     <span>System Settings</span></a>                                       
                                 </li>                                   
-                                <li><a href="screen-labels.html" class="waves-effect">
+                                <li><a routerLink="screen-labels.html" class="waves-effect">
                                     <i class="las la-desktop"></i>
                                     <span>Screen Labels</span></a>                                       
                                 </li>                                   
-                                <li><a href="screen-colors.html" class="waves-effect">
+                                <li><a routerLink="screen-colors.html" class="waves-effect">
                                     <i class="las la-desktop"></i>
                                     <span>Screen Colors</span></a>                                       
                                 </li>                                   
-                                <li><a href="system-status.html" class="waves-effect">
+                                <li><a routerLink="system-status.html" class="waves-effect">
                                     <i class="las la-list-ul"></i>
                                     <span>System Status</span></a>                                       
                                 </li>                                   
-                                <li><a href="status-groups.html" class="waves-effect">
+                                <li><a routerLink="status-groups.html" class="waves-effect">
                                     <i class="las la-list-ul"></i>
                                     <span>Status Groups</span></a>                                       
                                 </li>                                   
-                                <li><a href="cid-groups.html" class="waves-effect">
+                                <li><a routerLink="cid-groups.html" class="waves-effect">
                                     <i class="las la-tty"></i>
                                     <span>CID Groups</span></a>                                       
                                 </li>                          
-                                <li><a href="voicemail.html" class="waves-effect">
+                                <li><a routerLink="voicemail.html" class="waves-effect">
                                     <i class="las la-voicemail"></i>
                                     <span>Voicemail</span></a>                                       
                                 </li>                                   
-                                <li><a href="audio-store.html" class="waves-effect">
+                                <li><a routerLink="audio-store.html" class="waves-effect">
                                     <i class="las la-file-audio"></i>
                                     <span>Audio Store</span></a>                                       
                                 </li>                                   
-                                <li><a href="music-on-holds.html" class="waves-effect">
+                                <li><a routerLink="music-on-holds.html" class="waves-effect">
                                     <i class="las la-music"></i>
                                     <span>Music On Hold</span></a>                                       
                                 </li>                                   
-                                <li><a href="vm-message-group.html" class="waves-effect">
+                                <li><a routerLink="vm-message-group.html" class="waves-effect">
                                     <i class="las la-envelope-open-text"></i>
                                     <span>VM Message Groups</span></a>                                       
                                 </li>                                   
-                                <li><a href="settings-container.html" class="waves-effect">
+                                <li><a routerLink="settings-container.html" class="waves-effect">
                                     <i class="las la-cog"></i>
                                     <span>Settings Container</span></a>                                       
                                 </li>                                   
@@ -271,7 +269,7 @@
             </div>
             <!-- End Page-content -->
     
-            <footer class="footer">
+            <!-- <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
@@ -279,7 +277,7 @@
                         </div>
                     </div>
                 </div>
-            </footer>
+            </footer> -->
         </div>
         <!-- end main content-->
     

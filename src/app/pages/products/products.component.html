@@ -1,0 +1,126 @@
+<div *ngIf="productPage" class="container">
+    
+  <table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+    class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td><img style="width: 30px;" [src]="product.resourceImages[0]" alt=""></td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.currentPrice }}</td>
+        <td>{{ product.discountPercent }}</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn  " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <i class="las la-ellipsis-h"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#"><i class="las la-pen"></i> Edit</a>
+              <a class="dropdown-item" href="#"><i class="las la-trash"></i> Edit</a>
+
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<section *ngIf="!productPage" class="myform-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="row">                        
+                    <form class="row" (ngSubmit)="saveProduct()" [formGroup]="productForm">
+                        <div class="form-group col-12">
+                            <label>Images</label>
+                            <ngx-dropzone (change)="onSelect($event)">
+                                <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+                                <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                </ngx-dropzone-preview>
+                            </ngx-dropzone>
+                        </div>
+                        <div *ngIf="(images?.dirty || images?.touched) && images?.errors" class="errors">
+                            <span *ngIf="images?.errors?.required">images is required</span>
+                            <span *ngIf="images?.errors?.images">images is invalid</span>
+                          </div>
+                        <div class="form-group col-6">
+                            <label>Title</label>
+                            <input type="text" class="form-control" placeholder="title" formControlName="title">
+                        </div>
+                        <div *ngIf="(title?.dirty || title?.touched) && title?.errors" class="errors">
+                            <span *ngIf="title?.errors?.required">Title is required</span>
+                            <span *ngIf="title?.errors?.category">Title is invalid</span>
+                          </div>
+                        <div class="form-group col-6">
+                            <label>Category</label>
+                            <input type="text" class="form-control" placeholder="category" formControlName="category">
+                        </div>
+                        <div *ngIf="(category?.dirty || category?.touched) && category?.errors" class="errors">
+                            <span *ngIf="category?.errors?.required">category is required</span>
+                            <span *ngIf="category?.errors?.category">category is invalid</span>
+                          </div>
+                        <div class="form-group col-6">
+                            <label>Price</label>
+                            <input type="text" class="form-control" placeholder="actualPrice"  formControlName="actualPrice" >
+                        </div>
+                        <div *ngIf="(actualPrice?.dirty || actualPrice?.touched) && actualPrice?.errors" class="errors">
+                            <span *ngIf="actualPrice?.errors?.required">Actual Price is required</span>
+                        </div>
+                        <div class="form-group col-6">
+                            <label>Discount (%)</label>
+                            <input type="text" class="form-control" placeholder="discountPercent" formControlName="discountPercent">
+                        </div>
+                        <div *ngIf="(discountPercent?.dirty || discountPercent?.touched) && discountPercent?.errors" class="errors">
+                            <span *ngIf="discountPercent?.errors?.required">discountPercent is required</span>
+                            <span *ngIf="discountPercent?.errors?.discountPercent">discountPercent is invalid</span>
+                          </div>
+                        <div class="form-group col-12">
+                            <label>Description</label>
+                            <textarea type="text" class="form-control" placeholder="description" formControlName="description"></textarea>
+                        </div>                        
+                        <div *ngIf="(description?.dirty || description?.touched) && description?.errors" class="errors">
+                            <span *ngIf="description?.errors?.required">description is required</span>
+                            <span *ngIf="description?.errors?.description">description is invalid</span>
+                          </div>
+                          <div class="form-group col-6">
+                              <label>Tags</label>
+                            <input class="form-control" type="text" placeholder="tags" formControlName="tags">
+                        </div>
+                        <div *ngIf="(tags?.dirty || tags?.touched) && tags?.errors" class="errors">
+                            <span *ngIf="tags?.errors?.required">tags is required</span>
+                            <span *ngIf="tags?.errors?.tags">tags is invalid</span>
+                          </div>
+                          <div class="form-group col-6">
+                              <label>Brand</label>
+                            <input class="form-control" type="text" placeholder="brand" formControlName="brand">
+                        </div>
+                        <div *ngIf="(brand?.dirty || brand?.touched) && brand?.errors" class="errors">
+                            <span *ngIf="brand?.errors?.required">brand is required</span>
+                            <span *ngIf="brand?.errors?.brand">brand is invalid</span>
+                          </div>
+                          <div class="myform-button col-12">
+                            <button [disabled]="!productForm.valid" class="btn primary-btn">
+                                Save Product
+                                <div *ngIf="loading" class="spinner-grow" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                  </div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

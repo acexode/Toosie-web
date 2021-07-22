@@ -8,8 +8,10 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpClientModule } from '@angular/common/http';
 import { FlutterwaveModule } from 'flutterwave-angular-v3';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { AppComponent } from './app.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
+import { AppComponent } from './app.component';
+import {DataTablesModule} from 'angular-datatables';
 import { ShopComponent } from './pages/shop/shop.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BlogComponent } from './components/blog/blog.component';
@@ -23,6 +25,10 @@ import { AuthComponent } from './layouts/auth/auth.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { CreateProductComponent } from './pages/create-product/create-product.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
+import { BrandsComponent } from './pages/brands/brands.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +49,10 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     LoginComponent,
     SignupComponent,
     CheckoutComponent,
+    ProductsComponent,
+    CreateProductComponent,
+    CategoriesComponent,
+    BrandsComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +64,8 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
     FlashMessagesModule.forRoot(),
     FlutterwaveModule,
     NgSelectModule ,
+    DataTablesModule,
+    NgxDropzoneModule,
     NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' }),
    
   ],
